@@ -10,7 +10,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
@@ -18,6 +19,12 @@
 </head>
 
 <body>
+
+    <!-- Procedural Background -->
+    <canvas id="pcb-canvas" class="pcb-bg"></canvas>
+
+    <!-- Dynamic Background Glow -->
+    <div class="cursor-glow"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -37,15 +44,16 @@
     <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content">
-                <p class="hero-subtitle">HELLO, I AM SAMIR</p>
-                <h1 class="hero-title">Design Verification <br> & <span class="text-gradient">RTL Design
+                <p class="hero-subtitle terminal-text">> UVM_INFO @ 0: reporter [SYS] HELLO, I'M SAMIR</p>
+                <h1 class="hero-title animate-slide-up" style="--delay: 0.2s">Design Verification <br> & <span
+                        class="text-gradient">RTL Design
                         Engineer</span></h1>
-                <p class="hero-description">
+                <p class="hero-description animate-slide-up" style="--delay: 0.3s">
                     Specializing in High Frequency ASIC Design Verification and RTL Design using UVM, SystemVerilog, and
                     Formal Verification.
                     I ensure silicon success through rigorous testing and innovative design methodologies.
                 </p>
-                <div class="hero-actions">
+                <div class="hero-actions animate-slide-up" style="--delay: 0.4s">
                     <a href="#publications" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn">Contact Me</a>
                 </div>
@@ -56,26 +64,31 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title" style="margin-bottom: 1rem;">Experience</h2>
 
             <div class="timeline">
+                <div class="timeline-progress"></div>
                 <!-- Role 1 -->
                 <div class="timeline-item">
-                    <span class="timeline-date">Nov 2025 - Present</span>
-                    <h3 class="timeline-title">Senior Silicon Design Engineer (RTL Design)</h3>
-                    <p class="timeline-company">AMD - Markham, Ontario</p>
+                    <span class="timeline-date">November 2025 – Present</span>
+                    <h3 class="timeline-title">Senior Silicon Design Engineer (RTL Design, UVM Verification, and AI
+                        Methodology)</h3>
+                    <p class="timeline-company">AMD - Markham ON</p>
                     <ul class="timeline-list">
-                        <li>Designed, developed, and delivered power- and area-optimized digital modules for widespread
-                            use across the entire Graphics IP</li>
-                        <li>Implemented sophisticated clock gating, power management techniques, and logic
-                            simplification to achieve stringent PPA targets</li>
-                        <li>Owned and maintained the Microarchitecture Specification for key Graphics IP blocks</li>
-                        <li>Collaborated closely with the Design Verification (DV) team to resolve complex
-                            design-specific issues identified during pre-silicon verification</li>
-                        <li>Spearheaded the initiative to integrate Artificial Intelligence (AI) tools and methodologies
-                            into existing silicon design workflows</li>
-                        <li>Mentored and guided cross-functional team members in the adoption and effective use of AI
-                            tools</li>
+                        <li>Owned and delivered high-performance Graphics IP blocks, managing the complete RTL design
+                            lifecycle from micro-architectural specification to timing closure</li>
+                        <li>Implemented advanced PPA optimization and timing-driven synthesis techniques to ensure
+                            hardware compliance with stringent performance and power targets</li>
+                        <li>Served as the primary Design Verification (DV) engineer for multiple Graphics IP blocks,
+                            architecting scalable UVM-based testbenches and defining comprehensive test plans</li>
+                        <li>Directed the execution of constrained-random verification and functional coverage strategies
+                            to ensure 100% design robustness and specification compliance</li>
+                        <li>Acted as the Subject Matter Expert (SME) for LLM integration, architecting agentic AI tools
+                            and end-to-end automation workflows for silicon engineering</li>
+                        <li>Engineered autonomous agents utilizing RAG (Retrieval-Augmented Generation), custom tool
+                            calls, and specialized agent rules to automate complex design analysis</li>
+                        <li>Integrated agentic automation into CI/CD pipelines to streamline regression triaging, bug
+                            identification, and design verification processes</li>
                     </ul>
                 </div>
 
@@ -128,7 +141,7 @@
     <!-- Publications Section -->
     <section id="publications">
         <div class="container">
-            <h2 class="section-title">Publications</h2>
+            <h2 class="section-title" style="margin-bottom: 1rem;">Publications</h2>
 
             <div class="projects-grid">
                 <!-- Pub 1 -->
@@ -223,7 +236,7 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title" style="margin-bottom: 1rem;">Technical Skills</h2>
 
             <div class="skills-grid">
                 <div class="skill-category">
@@ -271,7 +284,8 @@
     <!-- Contact & Footer -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" style="margin-bottom: 1rem;">Get In Touch</h2>
+
             <p style="color:var(--text-secondary); margin-bottom: 2rem;">
                 Currently open for new opportunities. Connect with me on LinkedIn!
             </p>
@@ -281,7 +295,7 @@
     </section>
 
     <footer class="footer">
-        <p>Designed & Built by Samir Mitha &copy; 2024</p>
+        <p>Designed & Built by Samir Mitha &copy; 2026</p>
     </footer>
 
     <script src="scripts/main.js"></script>
