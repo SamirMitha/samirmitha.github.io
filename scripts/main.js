@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     /* =========================================
+       0. MOBILE NAV HAMBURGER
+       ========================================= */
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+    }
+
+    /* =========================================
        1. SCROLL ANIMATIONS
        ========================================= */
     // Add fade-in class to elements we want to animate
@@ -29,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
        2. ACTIVE LINK HIGHLIGHTING
        ========================================= */
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinkElements = document.querySelectorAll('.nav-link');
 
     window.addEventListener('scroll', () => {
         let current = '';
@@ -41,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        navLinks.forEach(link => {
+        navLinkElements.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').includes(current)) {
                 link.classList.add('active');

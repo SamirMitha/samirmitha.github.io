@@ -286,6 +286,10 @@ section {
     letter-spacing: -0.02em;
 }
 
+.hamburger {
+    display: none;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -664,4 +668,175 @@ section {
     color: var(--text-secondary);
     font-size: 0.9rem;
     border-top: 1px solid var(--border-color);
+}
+
+/* =========================================
+   8. RESPONSIVE - TABLET (<=1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+    :root {
+        --section-spacing: 80px;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* =========================================
+   9. RESPONSIVE - MOBILE (<=768px)
+   ========================================= */
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 60px;
+        --section-spacing: 60px;
+    }
+
+    /* Nav: stack links vertically and hide by default */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        padding: 1rem 2rem;
+        gap: 1rem;
+        border-bottom: var(--glass-border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-container {
+        position: relative;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1001;
+        background: none;
+        border: none;
+        padding: 4px;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--text-primary);
+        border-radius: 2px;
+        transition: var(--transition);
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Hero */
+    .hero-content {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    /* Terminal text: allow wrapping on mobile */
+    .terminal-text {
+        white-space: normal;
+        word-break: break-word;
+        font-size: 0.7rem;
+        animation: none;
+        border-right: none;
+    }
+
+    /* Timeline */
+    .timeline-item {
+        margin-left: 1.8rem;
+        padding: 1.25rem;
+    }
+
+    .timeline-item::before {
+        left: calc(-1.8rem - 6px);
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline-title {
+        font-size: 1.15rem;
+    }
+
+    .timeline-date {
+        font-size: 0.75rem;
+    }
+
+    .timeline-list {
+        font-size: 0.85rem;
+    }
+
+    /* Projects grid: single column */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    /* Skills grid: single column */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Section titles */
+    .section-title {
+        margin-bottom: 2.5rem;
+    }
+
+    /* Cursor glow: hide on touch devices */
+    .cursor-glow {
+        display: none;
+    }
+
+    /* Hide IC chip pins on mobile to prevent overflow */
+    .timeline-item::after,
+    .project-card::after,
+    .skill-category::after {
+        display: none;
+    }
+
+    /* Ensure body doesn't scroll horizontally */
+    body {
+        overflow-x: hidden;
+    }
 }
